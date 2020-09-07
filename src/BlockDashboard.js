@@ -16,9 +16,6 @@ const dummyBlocks = [
   />,
   <Block />, // default type: text
   <Block 
-    type=""
-  />,
-  <Block 
     type="table"
   />,
   <Block
