@@ -45,11 +45,11 @@ const dummyBlocks = [
 
 class BlockDashboard extends React.Component {
   state = {
-    blockContainers: [],
+    blocks: [],
   };
 
   componentDidMount() {
-    this.setState({ blocks: blockContainers });
+    this.setState({ blocks: dummyBlocks });
   }
 
   render() {
