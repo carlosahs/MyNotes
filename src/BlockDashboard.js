@@ -2,41 +2,42 @@ import React from "react";
 
 import Block from "./Block";
 import BlockAdder from "./BlockAdder";
+import BlockContainer from "./BlockContainer"
 import BlockList from "./BlockList";
 
 const dummyBlocks = [
-  <Block 
+  <BlockContainer
     key={1}
     type="math"
   />,
-  <Block 
+  <BlockContainer 
     key={2}
     type="code"
   />,
-  <Block 
+  <BlockContainer 
     key={3}
     type="heading"
   />,
-  <Block
+  <BlockContainer
     key={4}
   />, // default type: text
-  <Block 
+  <BlockContainer 
     key={5}
     type="table"
   />,
-  <Block
+  <BlockContainer
     key={6}
     type="srs"
   />,
-  <Block
+  <BlockContainer
     key={7}
     type="image"
   />,
-  <Block
+  <BlockContainer
     key={8}  
     type="sound"
   />,
-  <Block
+  <BlockContainer
     key={9}
     type="graphics"
   />
@@ -44,11 +45,11 @@ const dummyBlocks = [
 
 class BlockDashboard extends React.Component {
   state = {
-    blocks: [],
+    blockContainers: [],
   };
 
   componentDidMount() {
-    this.setState({ blocks: dummyBlocks });
+    this.setState({ blocks: blockContainers });
   }
 
   render() {
@@ -62,3 +63,5 @@ class BlockDashboard extends React.Component {
     );
   }
 }
+
+export default BlockDashboard;
