@@ -21,7 +21,16 @@ const blockData = blockTypes.map(type => {
   };
 });
 
-const dummyBlocks = "";
+const dummyBlocks = blockData.map(block => {
+  return (
+    <BlockContainer
+      key={block.id}
+      id={block.id}
+      type={block.type}
+      content={block.content}
+    />
+  );
+});
 
 class BlockDashboard extends React.Component {
   state = {
