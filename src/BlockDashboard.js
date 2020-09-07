@@ -41,6 +41,10 @@ class BlockDashboard extends React.Component {
     this.setState({ blocks: dummyBlocks });
   }
 
+  removeBlock = () => {};
+  addBlock = () => {};
+  updateBlock = () => {};
+
   render() {
     return (
       <div>
