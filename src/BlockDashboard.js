@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 // React components
 import Block from "./Block";
 import BlockAdder from "./BlockAdder";
-import BlockContainer from "./BlockContainer"
+import EditableBlock from "./EditableBlock"
 import BlockList from "./BlockList";
 
 const blockTypes = [
@@ -23,7 +23,7 @@ const blockData = blockTypes.map(type => {
 
 const dummyBlocks = blockData.map(block => {
   return (
-    <BlockContainer
+    <EditableBlock
       key={block.id}
       id={block.id}
       type={block.type}
@@ -41,17 +41,21 @@ class BlockDashboard extends React.Component {
     this.setState({ blocks: dummyBlocks });
   }
 
-  removeBlock = () => {};
   addBlock = () => {};
+  removeBlock = () => {};  
   updateBlock = () => {};
 
   render() {
     return (
       <div>
         <BlockList
-          blocks = {this.state.blocks}
+          blocks={this.state.blocks}
+          onBlockRemoval={this.removeBlock}
+          onBlockupdate={this.updateBlock}
         />
-        <BlockAdder />
+        <BlockAdder 
+          onBlockAddition={this.addBlock}
+        />
       </div>
     );
   }
